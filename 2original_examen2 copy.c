@@ -250,9 +250,24 @@ int ex02()
     char **ciudades = (char **)malloc(n * sizeof(char *));
     int *vuelos = (int *)malloc(n * sizeof(int));
     float *costos = (float *)malloc(n * sizeof(float));
-/* ----------  FIN RESPUESTA:  --------------- */
-  return 0;
+
+    for (int i = 0; i < n; i++) {
+        char ciudad[50];
+        char codigo[25];
+        float costo;
+
+        fscanf(archivo, "%s %s $%f", ciudad, codigo, &costo);
+
+ 
+    }
+    fclose(archivo);
+
+
+
+ return 0;
 }
+/* ----------  FIN RESPUESTA:  --------------- */
+ 
 
 
 /*  = = = = = = = Ejercicio 03: Calculadora RPN  = = = = = =
@@ -288,7 +303,7 @@ int main()
   printf("=== E01: Mandar al inicio\n");
   ex01();
   printf("\n=== E02: Destinos\n");
-  //ex02();
+  ex02();
   printf("\n=== E03: Calculadora RPN\n");
   //ex03();
   return 0;
