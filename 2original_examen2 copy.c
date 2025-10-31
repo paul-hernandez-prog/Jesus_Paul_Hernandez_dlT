@@ -157,7 +157,11 @@ node* moverUltimoAlInicio(node* header) {
         anterior = actual;
         actual = actual->next;
     }
+    anterior->next = NULL;   
+    actual->next = header;     
+    header = actual;         
 
+    return header;
 }/* ----------  FIN RESPUESTA:  --------------- */
 
 
@@ -179,8 +183,8 @@ int ex01()
 
 /* ----------  INICIO RESPUESTA:  --------------- */
 // Espacio para que mandes llamar tu función y compruebes el resultado.
-moverUltimoAlInicio(L1);
-moverUltimoAlInicio(L2);
+L1 = moverUltimoAlInicio(L1);
+L2 = moverUltimoAlInicio(L2);
 
 /* ----------  FIN RESPUESTA:  --------------- */
   
@@ -231,11 +235,21 @@ moverUltimoAlInicio(L2);
     Costos:
     600.57 12159.87 8000.00 5544.33 18157.01
 */
-
 int ex02()
 {
 /* ----------  INICIO RESPUESTA:  --------------- */
-FILE *f1
+    FILE *archivo = fopen("destinos.txt", "r");
+    if (archivo == NULL) {
+        printf("No se pudo abrir el archivo...\n");
+        return 1;
+    }
+
+    int n;
+    fscanf(archivo, "%d", &n);
+
+    char **ciudades = (char **)malloc(n * sizeof(char *));
+    int *vuelos = (int *)malloc(n * sizeof(int));
+    float *costos = (float *)malloc(n * sizeof(float));
 /* ----------  FIN RESPUESTA:  --------------- */
   return 0;
 }
